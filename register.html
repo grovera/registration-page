@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="register.js"></script>
+    </head>
+
+    <body onload="initilizeValues()">
+        <form action="#" onsubmit="verifySubmission();return false">
+            <div class="container">
+                <h1>Registration</h1>
+                <hr>
+                <table>
+                    <tr>
+                        <td><label for="user_id"><b>User ID:</b></label></td>
+                        <td><input type="text" id="user_id" required autofocus></td>
+                    </tr>                    
+                    <tr>
+                        <td><label for="password"><b>Password:</b></label></td>
+                        <td><input type="password" id="password" minlength="7" maxlength="20" pattern="^(?=.*[0-9!#$%])(?=.*[a-zA-Z]{4,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" oninput="calculatePasswordStrength()" required> <progress class="passwordStrength" id="password_strength" value="0" max="6"></progress></td>
+                    </tr>
+                    <tr>
+                        <td><label for="verify_pasword"><b>Verify Password</b></label></td>
+                        <td><input type="password" id="verify_pasword"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email"><b>Email</b></label></td>
+                        <td><input type="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="verify_email"><b>Verify Email</b></label></td>
+                        <td><input type="email" id="verify_email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="security_questions_1"><b>Security Question</b></label></td>
+                        <td><input list="questions" id="security_questions_1"></td>
+                        <datalist id="questions">
+                            <option value="Sum of 2 + 3 =">
+                            <option value="Sum of 100 + 200 =">
+                            <option value="23 x 100 =">
+                            <option value="Capital of India">
+                            <option value="Capital of USA">
+                        </datalist> 
+                    </tr>
+                    <tr>
+                        <td><label for="security_answer_1"><b>Security Answer</b></label></td>
+                        <td><input type="text" id="security_answer_1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="security_question_2"><b>Security Question</b></label></td>
+                        <td><input list="questions" id="security_questions_2"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="security_answer_2"><b>Security Answer</b></label></td>
+                        <td><input type="text" id="security_answer_2"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mobile"><b>Mobile</b></label></td>
+                        <td><input type="tel" id="mobile"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address"><b>Address</b></label></td>
+                        <td><textarea id="address" class="address"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label for="interest"><b>Areas you may be interested in, please select one or more:</b></label></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><textarea name="interest" id="interest" class="interest"></textarea></td>
+                    </tr> 
+                </table>
+                <hr>
+                <button type="submit">Register</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </body>
+
+</html>
